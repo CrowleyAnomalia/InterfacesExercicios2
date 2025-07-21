@@ -21,10 +21,11 @@ namespace InterfacesExercicios2.Entities
             Nome = nome;
             Premium = false;//redundancia
             Localizacao = localizacao;
+            livros = new List<Livro>();
         }
         public void ContratarPremium() 
         { Premium = true; }
-        public void AdicionarLvros(Livro livro)
+        public void AdicionarLivros(Livro livro)
         {
             livros.Add(livro);
         }
