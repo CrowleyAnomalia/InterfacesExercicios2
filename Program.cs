@@ -13,7 +13,7 @@ try {
     Enum.TryParse<Regiao>(localizacao, ignoreCase: true, out var regiao);//muito importante
 
     Cliente cliente = new(id, nome, regiao);
-    Console.Write("Deseja se tornar Premium e ganhar um desconto de 5% em todos os pedidos? S/N");
+    Console.Write("Deseja se tornar Premium e ganhar um desconto de 5% em todos os pedidos? S/N: ");
     string escolha = Console.ReadLine();
     char sn = char.ToUpper(escolha[0]);
 
@@ -44,7 +44,7 @@ try {
     }
 
     ClienteService clienteService = new(new ServicoImpostoRN(), new FreteBrasil(), new DescontoPremium());
-    Console.WriteLine($"Total: {clienteService.ProcessarPedido(cliente)}");
+    Console.WriteLine($"Total: {clienteService.ProcessarPedido(cliente).ToString("F2")}");
 }
 catch (Exception ex) { Console.WriteLine(ex.Message); }
 
